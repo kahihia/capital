@@ -1,0 +1,121 @@
+.nav-tabs-dropdown {
+  display: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.nav-tabs-dropdown:before {
+  content: "☰";
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  right: 30px;
+}
+
+@media screen and (min-width: 769px) {
+  #nav-tabs-wrapper {
+    display: block!important;
+  }
+}
+@media screen and (max-width: 768px) {
+    .nav-tabs-dropdown {
+        display: block;
+    }
+    #nav-tabs-wrapper {
+        display: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        text-align: center;
+}
+   .nav-tabs-horizontal {
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+        border: 1px solid;
+        border-radius: 4px;
+      
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+   }
+    .nav-tabs-horizontal  > li {
+		
+        float: none;
+    }
+    .nav-tabs-horizontal  > li + li {
+        margin-left: 2px;
+    }
+    .nav-tabs-horizontal > li,
+    .nav-tabs-horizontal > li > a {
+        background: transparent;
+        width: 100%;
+} 
+    .nav-tabs-horizontal  > li > a {
+        border-radius: 4px;
+    }
+    .nav-tabs-horizontal  > li.active > a,
+    .nav-tabs-horizontal  > li.active > a:hover,
+    .nav-tabs-horizontal  > li.active > a:focus {
+        color: #ee3733;
+        background-color: white;
+    }
+}
+.btn-default{
+	font-family:'Open Sans', sans-serif;
+	font-weight:600;
+	color:#666;
+}
+.btn-default:hover{
+	font-family:'Open Sans', sans-serif;
+	background-color:#ee3733;
+	font-weight:600;
+	color:white;
+}
+.call-yes
+{
+	background-color:rgba(236, 32, 32, 0.76);
+	color:white;
+}
+.call-no
+{
+	background-color: rgba(76, 165, 23, 0.8);
+	color: rgb(30, 25, 25);
+}
+.call-yes-icon
+{
+	padding-left:10px;
+	font-size:15px;
+	color:rgba(76, 165, 23, 0.8);
+}
+.row-custom
+{
+	padding-bottom:30px;
+	padding-top:20px;
+}
+
+.call-no-icon
+{	
+	padding-left:10px;
+	font-size:15px;
+	color:#f8ba01;
+}
+h1.unsubscribed
+{
+	padding-left:20px;
+	padding-top:20px;
+	padding-bottom:20px;
+	font-size:25px;
+	font-weight:600;
+	color:#666;
+	
+}
+#sell
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(236, 32, 32, 0.76);
+	font-weight:700;
+	
+}
+#buy
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(76, 165, 23, 0.8);
+	font-weight:700;
+}

@@ -1,0 +1,1 @@
+# Wallet addresses, format: <symbol> <pubkey>

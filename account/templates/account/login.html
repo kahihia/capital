@@ -1,0 +1,37 @@
+{% extends 'common/base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<div class="page-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Login</h2>
+				<p></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class = "container" style="padding-top:50px;">
+	<div class="row">
+		<div class = "col-md-6">
+			<h4 class="classic-title"><span>LOGIN</span></h4>
+			<form action = "{% url 'login' %}" method = "post">
+				{% csrf_token %}
+				{% bootstrap_form f %}
+				<a href="{% url 'forgot_password' %}">Forgot password?</a></br></br>
+				{% buttons %}
+				<button type="submit" class="btn btn-primary">
+					Submit
+				</button>
+				{% endbuttons %}
+			</form>
+		</div>
+		<div class="col-md-5 col-md-push-1">
+			<h4 class="classic-title"> DON'T HAVE AN ACCOUNT YET? SIGNUP WITH US</h4>
+			<a class="button btn btn-primary"  href="{% url 'signup' %}">Sign Up</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

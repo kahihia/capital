@@ -1,0 +1,58 @@
+<html>
+<head onload="submitPayuForm()">
+  <script type="text/javascript">
+    var hash = "{{ hashh }}";
+    function submitPayuForm() {
+      if(hash =='') {
+        return;
+      }
+      var payuForm = document.forms.payuForm;
+      payuForm.submit();
+    }
+  </script>
+</head>
+<body>
+  <h2>PayU Form</h2>
+  <br/>
+  {% if error %}
+  <span style="color:red">Please fill all mandatory fields.</span>
+  <br/>
+  <br/>
+  {% endif %}
+
+  <form action={{ action }} method="post" name="payuForm">
+    {% csrf_token %}
+    <input type="hidden" name="key" value="{{ MERCHANT_KEY }}" />
+    <input type="hidden" name="hash_string" value="{{ hash_string }}" />
+    <input type="hidden" name="hash" value="{{ hashh }}"/>
+    <input type="hidden" name="posted" value="{{ posted }}"/>
+    <input type="hidden" name="txnid" value="{{ txnid }}" />
+
+    Amount: 
+    <input name="amount" value="{{ posted.amount|default:'' }}" /><br>
+    
+    <input type="hidden" name="firstname" id="firstname" value="{{ posted.firstname|default:'' }}" />
+
+     
+    <input type="hidden" name="email" id="email" value="{{ posted.email|default:'' }}" />
+     
+    <input type="hidden" name="phone" value="{{ posted.phone|default:'' }}" />
+
+    Product Info: 
+    <textarea name="productinfo">{{ posted.productinfo|default:'' }}</textarea><br>
+
+
+   
+    <input type="hidden" name="surl" value="{{ posted.surl }}" size="64" />
+    <input type="hidden" name="furl" value="{{ posted.furl }}" size="64" />
+
+
+
+    <input type="hidden" name="service_provider" value="payu_paisa" size="64" />
+
+
+    <input type="submit" value="Submit" />
+
+  </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+Hi,
+
+The following call has been issued :
+
+Stock Name: {{stock_name}}
+Trade: {{trade}}
+Entry Price Range: {{entry_price_range}}
+Target: {{target}}
+Stop Loss: {{stop_loss}}
+Time Frame: {{time_frame}}
+
+Thanks,
+Bluerun financial team
+

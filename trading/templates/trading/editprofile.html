@@ -1,0 +1,33 @@
+{% extends 'common/base.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% block content %}
+<div class="page-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Edit Profile</h2>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class = "container" style="padding-top:50px;">
+<div>
+  <div class="col-md-7 col-sm-12 col-xs-12">
+  <h4 class="classic-title"><span>PROFILE DETAILS</span></h4>
+    <form action = "{% url 'editprofile' user.id %}" method = "post" class = "form">
+      {% csrf_token %}
+      {% bootstrap_form f %}
+      {% buttons %}
+      <button type="submit" class="btn btn-primary">
+        Save
+      </button>
+      {% endbuttons %}
+    </form>
+  </div>
+</div>
+</div>
+{% endblock %}

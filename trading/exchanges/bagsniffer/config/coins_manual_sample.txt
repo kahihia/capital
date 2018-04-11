@@ -1,0 +1,4 @@
+# Manually set coin holdings, format: <symbol> <holding>
+
+DOGE 1.0
+TROLL 5.0 <- in trollcoin wallet

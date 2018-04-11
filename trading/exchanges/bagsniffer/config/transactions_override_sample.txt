@@ -1,0 +1,3 @@
+# Manually override transactions (buys/sells). Format: <ID> <amount in BTC>
+
+0 0.25

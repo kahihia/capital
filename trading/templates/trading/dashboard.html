@@ -1,0 +1,173 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/dashboard.css' %}">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.38.0/handsontable.full.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.38.0/handsontable.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+        <script src="/static/script-index.js"></script>
+
+ 	{% endblock %}
+{% block content %}
+
+
+<div class="page-banner" style="padding:40px 0;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Dashboard</h2>
+				<p>Hello {{ user.first_name }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% include 'webroot/index.html' %}
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-2">
+	<h4 class="classic-title"><span>MENU</span></h4>
+	<ul>
+		<li><a href="{% url 'profile' id=user.id %}">Your Profile</a></li>
+	</ul>
+</div>
+    <div class = "col-md-10" >
+
+    <h4 class="classic-title"><span>CAPITAL GAINS IN SPECIFIED TRADING PLATFORMS</span></h4>
+	<a href="#" class="nav-tabs-dropdown btn btn-block btn-default">Call Tabs</a>
+	<ul class="nav nav-tabs nav-justified nav-tabs-horizontal " role="tablist" id="nav-tabs-wrapper">
+		<li role="presentation" class="active"><a href="#Quadrigacx_data" aria-controls="cashintra" role="tab" data-toggle="tab">Quadrigacx</a></li>
+		<li role="presentation"><a href="#Quoinex_data" aria-controls="cashpositional" role="tab" data-toggle="tab">Quoine</a></li>
+		<li role="presentation"><a href="#Kraken_data" aria-controls="stcokfuture" role="tab" data-toggle="tab">Kraken</a></li>
+		<li role="presentation"><a href="#Bitfinex_data" aria-controls="niftyfuture" role="tab" data-toggle="tab">Bitfinex</a></li>
+		<li role="presentation"><a href="#Poloniex_data" aria-controls="niftyfuture" role="tab" data-toggle="tab">Poloniex</a></li>
+		<li role="presentation"><a href="#Bitmex_data" aria-controls="niftyfuture" role="tab" data-toggle="tab">Bitmex</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="Quadrigacx_data">
+	                {% if not Quoinex %}
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe to Quadrigacx <a target= "_blank" href="{% url 'addplatformapi' %}">click here</a></h2>
+			</div>
+			{%else%}
+			<h3> Transactions<h3>
+			   {{Quadrigacx}}
+
+			{% endif %}
+                    </br></br>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="Quoinex_data">
+			{% if not Quoinex %}
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe to Quoinex <a target= "_blank" href="{% url 'addplatformapi' %}">click here</a></h2>
+
+			</div>
+			{%else%}
+			<h3> Transactions<h3>
+	                         {{Quoinex}}
+
+			{% endif %}
+			</br></br>
+		</div>
+
+		<div role="tabpanel" class="tab-pane" id="Kraken_data">
+			{% if not Kraken %}
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe to Kraken <a target= "_blank" href="{% url 'addplatformapi' %}">click here</a></h2>
+
+			</div>
+			{%else%}
+
+            	               <h3> Transactions<h3>
+            	                {{Kraken}}
+			{% endif %}
+
+			</br></br>
+		</div>
+			<div role="tabpanel" class="tab-pane" id="Bitmex_data">
+			{% if not Bitmex %}
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe to Bitmex <a target= "_blank" href="{% url 'addplatformapi' %}">click here</a></h2>
+
+			</div>
+			{%else%}
+
+            	               <h3> Transactions<h3>
+            	                {{Bitmex}}
+			{% endif %}
+
+			</br></br>
+		</div>
+            <div role="tabpanel" class="tab-pane" id="Poloniex_data">
+			{% if not Poloniex %}
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe to Poloniex <a target= "_blank" href="{% url 'addplatformapi' %}">click here</a></h2>
+
+			</div>
+			{%else%}
+
+            	               <h3> Transactions<h3>
+            	                {{Poloniex}}
+			{% endif %}
+
+			</br></br>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="Bitfinex_data">
+                            {% if not Bitfinex %}
+            			<div style = "text-align: center;">
+            				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+            				<h2>To subscribe to Bitfinex <a target= "_blank" href="{% url 'addplatformapi' %}">click here</a></h2>
+
+            			</div>
+                		{%else%}
+
+            	               <h3> Transactions<h3>
+                	            {{Bitfinex}}
+                		{% endif %}
+
+		</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!--Mobile Tabs Dropdown Menu Script-->
+<script>
+
+$('.nav-tabs-dropdown').each(function(i, elm) {
+
+    $(elm).text($(elm).next('ul').find('li.active a').text());
+
+});
+
+$('.nav-tabs-dropdown').on('click', function(e) {
+
+    e.preventDefault();
+
+    $(e.target).toggleClass('open').next('ul').slideToggle();
+
+});
+
+$('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
+
+    e.preventDefault();
+
+    $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
+
+});
+
+</script>
+
+<!--End of mobile tab dropdown script-->
+
+{% endblock %}

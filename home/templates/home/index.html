@@ -1,0 +1,81 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/index.css' %}">
+
+{% endblock %}
+{% block content %}
+<!-- Start Content -->
+<div id="content">
+
+<div class="col-md-12">
+    <!-- Start Services Icons -->
+    <h4 class="classic-title"><span>SERVICES</span></h4>
+    <div class="row">
+
+      <!-- Start Service Icon 1 -->
+      <div class="col-md-3 col-sm-6 service-box service-center">
+      <a>
+        <div class="service-icon">
+          <i class="fa fa-line-chart icon-medium-effect icon-effect-2"></i>
+        </div>
+        <div class="service-content">
+          <h4>Stock Futures</h4>
+          <p></p>
+        </div>
+      </a>
+      </div>
+      <!-- End Service Icon 1 -->
+
+      <!-- Start Service Icon 2 -->
+      <div class="col-md-3 col-sm-6 service-box service-center">
+      <a>
+        <div class="service-icon">
+          <i class="fa fa-list icon-medium-effect icon-effect-2"></i>
+        </div>
+        <div class="service-content">
+          <h4>Stock Options</h4>
+          <p></p>
+        </div>
+        </a>
+      </div>
+      <!-- End Service Icon 2 -->
+
+      <!-- Start Service Icon 3 -->
+      <div class="col-md-3 col-sm-6 service-box service-center">
+      <a>
+        <div class="service-icon">
+          <i class="fa fa-bar-chart icon-medium-effect icon-effect-2 gray-icon"></i>
+        </div>
+        <div class="service-content">
+          <h4>Nifty Derivatives</h4>
+          <p></p>
+        </div>
+        </a>
+      </div>
+      <!-- End Service Icon 3 -->
+
+      <!-- Start Service Icon 4 -->
+      <div class="col-md-3 col-sm-6 service-box service-center">
+      <a>
+        <div class="service-icon">
+          <i class="fa fa-dollar icon-medium-effect icon-effect-2 gray-icon"></i>
+        </div>
+        <div class="service-content">
+          <h4>Cash Segment</h4>
+          <p></p>
+        </div>
+        </a>
+      </div>
+      <!-- End Service Icon 4 -->
+	</div>
+    </div>
+    <!-- End Services Icons -->
+<!-- Divider -->
+    <div class="hr1 margin-top"></div>
+        <!-- Divider -->
+    <div class="hr1 margin-60"></div>
+    </div>
+    <!-- End content -->
+    <div class="hr1 margin-60"></div>
+    {% endblock %}

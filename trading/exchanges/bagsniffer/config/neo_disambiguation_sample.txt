@@ -1,0 +1,3 @@
+# NEO disambiguation, format: <from (NEO)> <to (Bagsniffer)>
+
+"QLC (QLINK)" QLC

@@ -1,0 +1,14 @@
+@font-face{
+font-family: "Demic"; 
+src: url("fonts/FuturaDemiC.otf");
+}
+
+@font-face{
+    font-family: "Futurisc";
+    src: url("fonts/futurafuturisc.otf")
+}
+
+@font-face{
+    font-family: "Book";
+    src: url("fonts/futurabookc.otf")
+}

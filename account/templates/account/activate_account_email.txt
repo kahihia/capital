@@ -1,0 +1,10 @@
+Hi {{ u.first_name }}, 
+
+Thank you for registering with Capital Gains & Tax Crypto
+
+copy this url and paste in your address or click on the link to confirm your email address and activate your account. 
+
+http://agile-bayou-9436.herokuapp.com/{% url 'activate_account' id=u.id otp=otp %}
+
+Thanks,
+Cryptotax team

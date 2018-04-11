@@ -1,0 +1,63 @@
+asgi-redis==1.0.0
+## ASYNC TASKS
+attrs==16.3.0
+autobahn==0.17.1
+Automat==0.5.0
+bintrees==2.0.7
+bitfinex
+bitex
+celery == 4.1.0
+certifi==2017.7.27.1
+channels==1.0.3
+chardet==3.0.4
+coinbase
+configparser==3.5.0
+constantly==15.1.0
+daphne==1.0.3
+dj-database-url==0.4.2
+django-bootstrap3
+django-celery-beat==1.1.0           # Scheduler via Django
+django-celery-results==1.0.1        # Store results via Django
+django-cors-headers==2.0.2
+django-crispy_forms
+django-extensions==1.7.6
+django-friendship==1.5.0
+django-redis-cache
+django-widget-tweaks == 1.4.1
+Django==1.11.8
+djangorestframework==3.5.4
+gdax
+gevent
+gunicorn==19.6.0
+hiredis==0.2.0 # C-based redis driver
+httpretty==0.8.6
+idna==2.6
+incremental==16.10.1
+invoke==0.20.4
+krakenex
+msgpack-python==0.4.8
+profig==0.4.1
+poloniex
+psycopg2==2.7.3.2
+pycrypto==2.6.1
+pysqlcipher3
+python-dateutil==2.6.0
+python-quoine
+pywaves
+quadriga==2.0.0
+raven==6.0
+redis==2.10.5
+requests==2.18.4
+sendgrid-django==4.2.0
+sendgrid==3.6.5           # via sendgrid-django
+six==1.10.0
+Twisted==17.1.0
+txaio==2.6.1
+urllib3
+user_agent
+web3
+websocket-client==0.40.0
+whitenoise==3.3.0
+xmltodict==0.10.2
+zerorpc
+zope.interface==4.3.3

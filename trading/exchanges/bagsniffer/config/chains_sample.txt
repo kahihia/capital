@@ -1,0 +1,3 @@
+# Wallet addresses, format: <symbol> <pubkey>
+
+BTC 1HLoD9E4SDFFPDiYfNYnkBLQ85Y51J3Zb1

@@ -1,0 +1,3 @@
+# Coinmarketcap disambiguation, format: <from (Coinmarketcap)> <to (Bagsniffer)>
+
+BlockCAT CAT

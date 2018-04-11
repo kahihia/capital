@@ -1,0 +1,299 @@
+{% load staticfiles %}
+<!doctype html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+
+<head>
+
+  <!-- Basic -->
+  <title>{% block page_title %} Capital Gains & Tax Crypto {% endblock %}</title>
+
+  <!-- Define Charset -->
+  <meta charset="utf-8">
+
+  <!-- Responsive Metatag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Page Description and Author -->
+  <meta name="description" content="Capital Gains & Tax Crypto">
+  <meta name="author" content="Capital Gains & Tax Crypto">
+
+  <!-- Bootstrap CSS  -->
+  <link rel="stylesheet" href="{% static 'margo/asset/css/bootstrap.min.css' %}" type="text/css" media="screen">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="{% static 'margo/css/font-awesome.min.css' %}" type="text/css" media="screen">
+
+  <!-- Slicknav -->
+  <link rel="stylesheet" type="text/css" href="{% static 'margo/css/slicknav.css' %}" media="screen">
+
+  <!-- Margo CSS Styles  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'margo/css/style.css' %}" media="screen">
+
+  <!-- Responsive CSS Styles  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'margo/css/responsive.css' %}" media="screen">
+
+  <!-- Css3 Transitions Styles  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'margo/css/animate.css' %}" media="screen">
+
+  <!-- Color CSS Styles  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'margo/css/colors/blue.css' %}" title="red" media="screen" />
+
+  <!-- Our css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/base.css' %}">
+
+  <!-- Margo JS  -->
+  <script type="text/javascript" src="{% static 'margo/js/jquery-2.1.4.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.migrate.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/modernizrr.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/asset/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.fitvids.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/owl.carousel.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/nivo-lightbox.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.isotope.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.appear.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/count-to.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.textillate.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.lettering.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.easypiechart.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.nicescroll.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.parallax.js' %}"></script>
+  <script type="text/javascript" src="{% static 'margo/js/jquery.slicknav.js' %}"></script>
+
+  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  {% block extrahead %} {% endblock %}
+</head>
+
+<body>
+
+  <!-- Container -->
+  <div id="container">
+
+    <!-- Start Header -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
+      <!-- Start Top Bar -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <!-- Start Contact Info -->
+              <ul class="contact-details">
+                <li><a href="{% url 'contactus' %}"><i class="fa fa-map-marker"></i> </a>
+                </li>
+                <li><a href="{% url 'contactus' %}"><i class="fa fa-envelope-o"></i> </a>
+                </li>
+                <li><a href="{% url 'contactus' %}"><i class="fa fa-phone"></i></a>
+                </li>
+              </ul>
+              <!-- End Contact Info -->
+            </div>
+            <div class="col-md-3">
+              <!-- Start Social Links -->
+              <ul class="social-list">
+                <li>
+                  <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="https://www.facebook.com/CapitalGains&TaxCrypto/" target="_blank"><i class="fa fa-facebook"></i></a>
+                </li>
+                <!--<li>
+                  <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>-->
+                <!--  <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
+                </li>-->
+                <li>
+                  <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                 <!--<li>
+                  <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                 <li>
+                  <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                </li>-->
+              </ul>
+              <!-- End Social Links -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Top Bar -->
+
+      <!-- Start Header ( Logo & Naviagtion ) -->
+      <div class="navbar navbar-default navbar-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Stat Toggle Nav Link For Mobiles -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="fa fa-bars"></i>
+            </button>
+            <!-- End Toggle Nav Link For Mobiles -->
+            <a class="navbar-brand" href="{% url 'index' %}">Capital Gains & Tax Crypto</a>
+          </div>
+          <div class="navbar-collapse collapse">
+
+            <!-- Start Navigation List -->
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+
+              <li>
+                  <a href="{% url 'contactus' %}">Contact Us</a>
+              </li>
+
+              {% if user.is_authenticated %}
+              <li>
+                <a href="#">{{ user.first_name }}&nbsp; <i class="fa fa-angle-down"></i></a>
+                <ul class = "dropdown">
+                  <li><a href="{% url 'dashboard' id=user.id %}">Dashboard</a></li>
+                  <li><a href="{% url 'profile' id=user.id %}">Profile</a></li>
+                  <li><a href="{% url 'reset_password' id=user.id %}">Reset password</a></li>
+                  <li><a href="{% url 'logout' id=user.id %}">logout</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li><a href="{% url 'login' %}">Login&nbsp; &nbsp; <i class="fa fa-lock"></i></a></li>
+              {% endif %}
+            </ul>
+            <!-- End Navigation List -->
+          </div>
+        </div>
+
+        <!-- Mobile Menu Start -->
+        <ul class="wpb-mobile-menu">
+          <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+              <li>
+                <a href="{% url 'contactus' %}">Contact Us</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li>
+                <a href="#">{{ user.first_name }}&nbsp;<i class="fa fa-angle-down"></i></a>
+                <ul class = "dropdown">
+                  <li><a href="{% url 'dashboard' id=user.id %}">Dashboard</a></li>
+                  <li><a href="{% url 'profile' id=user.id %}">Profile</a></li>
+                  <li><a href="{% url 'reset_password' id=user.id %}">Reset password</a></li>
+                  <li><a href="{% url 'logout' id=user.id %}">logout</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li><a href="{% url 'login' %}">Login&nbsp; &nbsp; <i class="fa fa-lock"></i></a></li>
+              {% endif %}
+        </ul>
+        <!-- Mobile Menu End -->
+
+      </div>
+      <!-- End Header ( Logo & Naviagtion ) -->
+      {% block header %}
+            <!-- <h1>Capital Gains & Tax Crypto</h1> -->
+        {% endblock %}
+    </header>
+    <!-- End Header -->
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Start Footer -->
+    <footer>
+      <div class="container">
+        <div class="row footer-widgets">
+
+          <!-- Start Subscribe & Social Links Widget -->
+          <div class="col-md-3">
+            <div class="footer-widget social-widget">
+              <h4>Follow Us<span class="head-line"></span></h4>
+              <ul class="social-icons">
+                <li>
+                  <a class="facebook" href="https://www.facebook.com/CapitalGains&TaxCrypto/" target="_blank"><i class="fa fa-facebook"></i></a>
+                </li>
+                <!--<li>
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                </li>-->
+                <!--<li>
+                  <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                </li>-->
+                <!--<li>
+                  <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                </li>-->
+                <li>
+                  <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <!--<li>
+                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                </li>-->
+                <!--<li>
+                  <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                </li>
+                <li>
+                  <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                </li>
+                <li>
+                  <a class="skype" href="#"><i class="fa fa-skype"></i></a>
+                </li>-->
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Subscribe & Social Links Widget -->
+
+          <!-- Start Contact Widget -->
+          <div class="col-md-5">
+            <div class="footer-widget contact-widget">
+              <h4></h4>
+              <p>Capital Gains & Tax Crypto</p>
+              <ul>
+                <li><span>Phone Number: </span></li>
+                <li><span>Email: </span></li>
+                <li><span>Website: </span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="col-md-4 text-white" >
+            <h4 style = "color: white">LINKS</h4><br>
+            <a href="#"><h6 style = "color: white"></h6></a><br>
+            <a href="#"><h6 style = "color: white"></h6></a><br>
+          </div> -->
+          <!-- .col-md-3 -->
+          <!-- End Contact Widget -->
+
+
+        </div>
+        <!-- .row -->
+
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+          <div class="row">
+            <div class="col-md-4">
+              <p>&copy; Capital Gains & Tax Crypto - All Rights Reserved</p>
+            </div>
+          </div>
+        </div>
+        <!-- End Copyright -->
+
+      </div>
+      {% block footer %}
+      {% endblock %}
+    </footer>
+    <!-- End Footer -->
+
+  </div>
+  <!-- End Container -->
+
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <script type="text/javascript" src="{% static 'margo/js/script.js' %}"></script>
+
+</body>
+
+</html>

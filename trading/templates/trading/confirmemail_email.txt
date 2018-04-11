@@ -1,0 +1,12 @@
+Hi {{ u.first_name }}, 
+
+We have recieved a request to change your email
+
+copy this url and paste in your address or click on the link to confirm your email address. 
+
+http://127.0.0.1:8000{% url 'confirm_email' id=u.id otp=otp %} 
+
+http://ec2-52-66-85-88.ap-south-1.compute.amazonaws.com{% url 'confirm_email' id=u.id otp=otp %}
+
+Thanks,
+Bluerun financial team

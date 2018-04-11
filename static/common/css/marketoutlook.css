@@ -1,0 +1,19 @@
+.custom-mo {
+  position: relative;
+ 
+  overflow: hidden;
+}
+ 
+/* 16x9 Aspect Ratio */
+.custom-mo-16x9 {
+  padding-bottom: 56.25%;
+}
+ 
+/* 4x3 Aspect Ratio */
+.custom-mo-4x3 {
+  padding-bottom: 75%;
+}
+ 
+iframe {
+    max-width: 100%;
+}

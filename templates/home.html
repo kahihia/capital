@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load form_tags %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Cryptos</li>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Crypto</th>
+            <th>Position</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        {% for crypto in cryptos %}
+        <tr class="hipso" id="hipso{{ crypto.name }}">
+            <td>
+                <a class="cryptonameLink" id="{{ crypto.name }}" href="#">{{ crypto.name }}</a>
+            </td>
+            <td class="align-middle" id="quant{{ crypto.name }}"> {{crypto.quantity}}</td>
+            <td class="align-middle" id="price{{ crypto.name }}"> {{crypto.price}}</td>
+            <td id="total{{ crypto.name }}">{{ crypto.totalvalue }}</td>
+            <td><button type="button" class="btn btn-danger" id="{{ crypto.name }}" value="delete">Delete</button></td>
+        </tr>
+        {% endfor %}
+        <button id="getprice">Update ALL</button>
+        <div id="total11"></div>
+    </tbody>
+</table>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="NameNew">Name</label>
+    <input type="text" class="form-control" id="NameNew" placeholder="Jane Doe">
+  </div>
+  <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input type="text" class="form-control" id="QuantityNew" placeholder="Quantity">
+  </div>
+  <button type="submit" class="btn btn-primary" id="submitnew">Add Crypto</button>
+</form>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
+<script>
+    var socket = new ReconnectingWebSocket('ws://' + window.location.host + '/users/');
+    socket.onopen = function open() {
+        console.log('Websocket connection created.');
+    };
+
+    socket.onmessage = function message(event) {
+      var data = JSON.parse(event.data);
+      var name = encodeURI(data['name']);
+      var price = "#price" + name;
+      var quant = "#quant" + name;
+      var name = "#total" + name;
+
+      if(data['boolreceive'] === 'update') {
+        $(price).html(data['price'])
+        $(quant).html(data['quantity'])
+        $(name).html(data['total'])
+      }
+
+      if(data['boolreceive'] === 'new') {
+        var newName = data['name'];
+        var newPrice = data['price'];
+        var newQuant = data['quantity'];
+        var newTotal = data['total'];
+
+
+        var z = document.createElement('p');
+        var name = document.createElement('a');
+        name.innerHTML = newName;
+        z.append(name);
+
+
+        var elNamea = $( "<a/>", {
+          href:'#',class: 'cryptonameLink', id:newName
+        }).text(newName);
+
+
+        var elName = $( "<td></td>").append(elNamea);
+        var elPrice = $( "<td>"+ newPrice +"</td>" );
+        var elQuant = $( "<td>"+ newQuant +"</td>" );
+        var elTotal = $( "<td>"+ newTotal +"</td>" );
+        var button = $("<button></button>", {type:"button", class:"btn btn-danger", value:"delete", id:newName}).text("Delete");
+
+        var td = $( "<td></td>").append(button);
+        console.log(newName);
+        var body = $("<tr></tr>").append(elName, elQuant,elPrice, elTotal, td);
+        $("#tableBody").append(body);
+      }
+
+      if(data['boolreceive'] === 'deleted') {
+          var value = "#hipso" + data['name'];
+          $(value).remove();
+      }
+
+    }
+
+
+    $("#getprice").click(function(){
+      var message = { func: "UpdateAll"}
+      socket.send(JSON.stringify(message));
+    });
+
+    $("#submitnew").click(function(){
+      var name = $("#NameNew").val();
+      var quantity = $("#QuantityNew").val()
+      var price = $("#PriceNew").val()
+      var message = { name: name,
+                      quantity: quantity,
+                      func: "new"}
+      socket.send(JSON.stringify(message));
+    });
+
+    $(".cryptonameLink").click(function(){
+      var nameCurrency = $(this).attr('id')
+      console.log(nameCurrency);
+      var message = { name: nameCurrency,
+                      func: "update1"}
+      socket.send(JSON.stringify(message));
+    });
+
+    $("button[value='delete']").click(function() {
+      var nameCurrency = $(this).attr('id')
+      var message = { name : nameCurrency,
+                      func: "delete"}
+      socket.send(JSON.stringify(message));
+    })
+
+</script>
+{% endblock %}

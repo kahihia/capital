@@ -1,0 +1,66 @@
+.custom-services
+{
+	padding-top:20px;
+	padding-bottom:auto;
+}
+.btn-lg:hover
+{
+	background-color:white;
+	color:#ee3733;
+	
+	
+}
+
+.custom-button
+{
+	color:#444;
+	font-family:'Open Sans', sans-serif;
+	font-size:16px;
+	font-weight:400;
+	
+}
+.custom-expertise
+{
+	padding-bottom:35px;
+	overflow-y:hidden; 
+	height:130px;
+	text-align:left;
+
+}
+.custom-expertise:hover
+{
+	overflow-y:auto;
+}
+ul.single li
+{
+	padding-right:20px;
+	display:inline;
+
+}
+i.fa-sort-amount-asc {
+  -webkit-transform:rotateX(180deg);
+  -moz-transform:rotateX(180deg);
+  -o-transform:rotateX(180deg);
+  -ms-transform:rotateX(180deg);
+}
+
+.container .dropdown-menu {
+    position: static;
+    float: none;
+}
+.dropdown-menu
+{
+	min-width:550px;
+	padding:17px;
+	color:white;
+	background-color:#00afd1;
+	font-family:'Open Sans', sans-serif;
+	font-size:16px;
+	font-weight:400;
+	line-height: 150%;
+	
+}
+@media (max-width:480px) {
+  .dropdown-menu {
+    min-width:80%;
+ }

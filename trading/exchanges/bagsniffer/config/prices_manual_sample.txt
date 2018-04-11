@@ -1,0 +1,3 @@
+# Manually set coin prices in BTC per coin, format: <symbol> <price>
+
+LGO 0.00005

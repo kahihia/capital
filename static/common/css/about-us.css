@@ -1,0 +1,31 @@
+.team-member .member-custom:hover {
+	
+    overflow-y:auto;
+}
+.team-member .member-custom{
+	overflow-y:hidden; 
+	height:150px;
+	text-align:left;
+	
+}
+
+.member-name-custom
+{
+	width:200px;
+}
+.custom-padding
+{
+	padding-bottom:50px;
+}
+.row-custom{
+	margin-bottom: 16px;
+	padding-top: 30px;
+	padding-bottom:14px;
+	
+	
+}
+.careers
+{
+	text-align:left;
+	line-height:30px;
+}

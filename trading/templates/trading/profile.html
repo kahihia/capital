@@ -1,0 +1,51 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'common/css/profile.css' %}">
+{% endblock %}
+{% block content %}
+<div class="page-banner" style="padding:40px 0;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Profile</h2>
+				<p>Hello {{ user.first_name }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="padding-top:50px;">
+	<div class="row">
+	<div class="col-md-7 col-xs-12">
+
+			<h4 class="classic-title"><span>PERSONAL INFORMATION</span></h4></br>
+			<div class="personalinfo">
+				<strong class="ppbody">Name:&nbsp&nbsp <span class="pull-right">{{ user.first_name }}&nbsp{{ user.last_name }}</span></strong></br>
+				<strong class="ppbody">Phone Number: &nbsp&nbsp<span class="pull-right">{{ user.phone }}</span></strong></br>
+				<strong class="ppbody">Email: &nbsp&nbsp<span class="pull-right">{{ user.email }}</span></strong></br></br>
+			</div>
+			<h4 class="classic-title"><span>API TRADING PLATFORM INTEGRATED</span></h4></br>
+			<ul class="list-group">
+			{%for platform in platform_api%}
+				<li class="list-group-item"><strong class="pbody">{{platform.trading_platform}}:</strong>
+
+					<a href="{% url 'editplatformapi' platform.trading_platform %}"> Update </a>
+
+				</li>
+
+				{%endfor%}
+			</ul>
+
+		</div>
+		<div class="col-md-5 col-xs-12">
+		<a href="{% url 'editprofile' user.id %}"><button type = "button" class="btn btn-primary">Edit Profile</button></a></br></br>
+		<a href="{% url 'reset_password' user.id %}"><button type = "button" class="btn btn-primary">Reset Password</button></a></br></br>
+		<a href="{% url 'addplatformapi' %}"><button type = "button" class="btn btn-primary">Add Platform</button></a></br></br>
+		<!-- <a href="#"><button type = "button" class="btn btn-primary">Change Subscription</button></a></br></br> -->
+		</div>
+	</div>
+	</div>
+</div>
+{% endblock %}
+
